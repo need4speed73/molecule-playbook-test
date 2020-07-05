@@ -1,0 +1,15 @@
+[centos8] 
+node1 
+node3 
+[centos7] 
+node2 
+node4 
+[centos:children]
+centos7 
+centos8 
+[dev] 
+node1 
+node2 
+[prod] 
+node3 
+node4

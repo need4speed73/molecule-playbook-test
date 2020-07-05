@@ -1,0 +1,9 @@
+---
+- name: Verify
+  hosts: all
+
+  tasks:
+  - name: verify apache is serving web requsts
+    uri:
+      url: http://localhost/
+      status_code: 200

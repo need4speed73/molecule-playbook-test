@@ -1,0 +1,45 @@
+---
+- name: Install Apache
+  hosts: 
+  become: true
+
+  vars:
+    apache_package: apache2
+    apache_service: apache2
+
+  handlers:
+    - name: restart_apache
+      service:
+        name: "{{ apache_service }}"
+        state: started
+
+  pre_tasks:
+    - name: Override Apache vars
+      set_fact:
+        apache_package: httpd
+        apache_service: httpd
+      when: ansible_os_family == 'RedHat'
+
+  tasks:
+    - name: Ensure Apache is Installed
+      package: 
+        name: "{{ apache_package }}"
+        state:  present
+        
+    - name: Copy web page
+      copy: 
+        content: |
+          <html>
+          <head><title>Hello World!!</title></head>
+          <body>Hello World !!</body>
+          </html>
+        dest: "/var/www/html/index.html"
+      notify: restart_apache
+
+    - name: Ensure apache is running at boot
+      service:
+        name: "{{ apache_service }}"
+        state: started
+        enabled: true
+
+    
