@@ -1,6 +1,6 @@
 ---
 - name: Install Apache
-  hosts: all 
+  hosts: all
   become: true
 
   vars:
@@ -22,12 +22,12 @@
 
   tasks:
     - name: Ensure Apache is Installed
-      package: 
+      package:
         name: "{{ apache_package }}"
         state:  present
-        
+
     - name: Copy web page
-      copy: 
+      copy:
         content: |
           <html>
           <head><title>Hello World!!</title></head>
