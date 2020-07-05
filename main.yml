@@ -41,5 +41,3 @@
         name: "{{ apache_service }}"
         state: started
         enabled: true
-
-    
