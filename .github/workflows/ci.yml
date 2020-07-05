@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         distro:
-          - centos8
+          - centos8-ansible
 
     steps:
       - name: Check out codebase
