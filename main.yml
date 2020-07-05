@@ -14,7 +14,7 @@
         state: started
 
   pre_tasks:
-    - name: Override Apache vars
+    - name: Override Apache var
       set_fact:
         apache_package: httpd
         apache_service: httpd
