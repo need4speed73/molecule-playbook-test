@@ -8,7 +8,7 @@ lint: |
   ansible-lint
 platforms:
   - name: instance
-    image: "geerlingguy/docker-centos8-ansible:latest"
+    image: "need4speed73/centos8-ansible:latest"
     command: ""
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
