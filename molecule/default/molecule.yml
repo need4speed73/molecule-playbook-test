@@ -4,8 +4,8 @@ dependency:
 driver:
   name: docker
 lint: |
-  yamllint .
-  ansible-lint
+    yamllint .
+    ansible-lint
 platforms:
   - name: instance
     image: "need4speed73/centos8-ansible:latest"
