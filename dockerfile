@@ -1,5 +1,5 @@
 FROM centos:8
-LABEL maintainer="Jeff Geerling"
+LABEL maintainer="Andy"
 ENV container=docker
 ENV pip_packages "ansible"
 # Install systemd -- See https://hub.docker.com/_/centos/

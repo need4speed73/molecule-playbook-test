@@ -1,6 +1,6 @@
 ---
 
-name: CI
+name: BU-SQUAD5-CI
 'on':
   pull_request:
   push:
@@ -30,4 +30,4 @@ jobs:
         run:  pip3 install molecule docker yamllint ansible-lint
 
       - name: run Molecule test 
-        run: molecule --debug test
+        run: molecule test
